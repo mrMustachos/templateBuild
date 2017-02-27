@@ -1,0 +1,154 @@
+/* Expand Entrances */
+@include keyframes(tdExpandIn) {
+	0% {
+		opacity: 0;
+		@include scale(0.85);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 1;
+		@include scale(1);
+	}
+}
+
+@include keyframes(tdExpandInBounce) {
+	0% {
+		opacity: 0;
+		@include scale(0.85);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	70% {
+		@include scale(1.03);
+		@include animationTimingFunction(ease);
+	}
+	100% {
+		opacity: 1;
+		@include scale(1);
+		@include animationTimingFunction(ease);
+	}
+}
+
+.tdExpandIn {
+	@include animationName(tdExpandIn);
+}
+
+.tdExpandInBounce {
+	@include animationName(tdExpandInBounce);
+}
+
+
+/* Expand Exits */
+@include keyframes(tdExpandOut) {
+	0% {
+		opacity: 1;
+		@include scale(1);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 0;
+		@include scale(1.2);
+	}
+}
+
+@include keyframes(tdExpandOutBounce) {
+	0% {
+		opacity: 1;
+		@include scale(1);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	30% {
+		opacity: 1;
+		@include scale(0.95);
+		@include animationTimingFunction(ease);
+	}
+	100% {
+		opacity: 0;
+		@include scale(1.2);
+	}
+}
+
+.tdExpandOut {
+	@include animationName(tdExpandOut);
+}
+
+.tdExpandOutBounce {
+	@include animationName(tdExpandOutBounce);
+}
+
+
+/* Shrink Entrances */
+@include keyframes(tdShrinkIn) {
+	0% {
+		opacity: 0;
+		@include scale(1.2);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 1;
+		@include scale(1);
+	}
+}
+
+@include keyframes(tdShrinkInBounce) {
+	0% {
+		opacity: 0;
+		@include scale(1.2);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	70% {
+		@include scale(0.95);
+		@include animationTimingFunction(ease);
+	}
+	100% {
+		opacity: 1;
+		@include scale(1);
+	}
+}
+
+.tdShrinkIn {
+	@include animationName(tdShrinkIn);
+}
+
+.tdShrinkInBounce {
+	@include animationName(tdShrinkInBounce);
+}
+
+
+/* Shrink Exits */
+@include keyframes(tdShrinkOut) {
+	0% {
+		opacity: 1;
+		@include scale(1);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 0;
+		@include scale(0.85);
+		@include animationTimingFunction(ease);
+	}
+}
+
+@include keyframes(tdShrinkOutBounce) {
+	0% {
+		opacity: 1;
+		@include scale(1);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	30% {
+		opacity: 1;
+		@include scale(1.03);
+		@include animationTimingFunction(ease);
+	}
+	100% {
+		opacity: 0;
+		@include scale(0.85);
+		@include animationTimingFunction(ease);
+	}
+}
+
+.tdShrinkOut {
+	@include animationName(tdShrinkOut);
+}
+.tdShrinkOutBounce {
+	@include animationName(tdShrinkOutBounce);
+}

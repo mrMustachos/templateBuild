@@ -1,0 +1,54 @@
+/* Hinge Flip */
+@include keyframes(tdHingeFlipIn) {
+  0% {
+    opacity: 0;
+    // transform: perspective(600px) rotateX(0deg);
+    @include perspective_translateX(600, 0);
+    @include transform_origin(center top);
+    @include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+  }
+  50% {
+    // transform: perspective(600px) rotateX(-10deg);
+    @include perspective_translateX(600, -10);
+    @include transform_origin(center top);
+    @include animationTimingFunction(ease-in);
+  }
+  100% {
+    opacity: 1;
+    // transform: perspective(600px) rotateX(0deg);
+    @include perspective_translateX(600, 0);
+    @include transform_origin(center top);
+    @include animationTimingFunction(ease-in);
+  }
+}
+
+.tdHingeFlipIn {
+  @include animationName(tdHingeFlipIn);
+}
+
+@include keyframes(tdHingeFlipOut) {
+  0% {
+    opacity: 1;
+    // transform: perspective(600px) rotateX(0deg);
+    @include perspective_translateX(600, 0);
+    @include transform_origin(center top);
+    @include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+  }
+  50% {
+    // transform: perspective(600px) rotateX(-10deg);
+    @include perspective_translateX(600, -10);
+    @include transform_origin(center top);
+    @include animationTimingFunction(ease-in);
+  }
+  100% {
+    opacity: 0;
+    // transform: perspective(600px) rotateX(0deg);
+    @include perspective_translateX(600, 0);
+    @include transform_origin(center top);
+    @include animationTimingFunction(ease-in);
+  }
+}
+
+.tdHingeFlipOut {
+  @include animationName(tdHingeFlipOut);
+}

@@ -1,0 +1,140 @@
+/* Basic Fades */
+@include keyframes(tdFadeIn) {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@include keyframes(tdFadeOut) {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+
+/* Fading Entrances */
+@include keyframes(tdFadeInDown) {
+	0% {
+		opacity: 0;
+		@include translateY(-10px);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 1;
+		@include translateY(0);
+	}
+}
+
+@include keyframes(tdFadeInLeft) {
+	0% {
+		opacity: 0;
+		@include translateX(10px);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 1;
+		@include translateX(0);
+	}
+}
+
+@include keyframes(tdFadeInUp) {
+	0% {
+		opacity: 0;
+		@include translateY(10px);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 1;
+		@include translateY(0);
+	}
+}
+
+@include keyframes(tdFadeInRight) {
+	0% {
+		opacity: 0;
+		@include translateX(-10px);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 1;
+		@include translateX(0);
+	}
+}
+
+.tdFadeInDown {
+	@include animationName(tdFadeInDown);
+}
+
+.tdFadeInLeft {
+	@include animationName(tdFadeInLeft);
+}
+
+.tdFadeInUp {
+	@include animationName(tdFadeInUp);
+}
+
+.tdFadeInRight {
+	@include animationName(tdFadeInRight);
+}
+
+
+/* Fading Exits */
+
+@include keyframes(tdFadeOutUp) {
+	0% {
+		opacity: 1;
+		@include translateY(0);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 0;
+		@include translateY(-10px);
+	}
+}
+
+@include keyframes(tdFadeOutRight) {
+	0% {
+		opacity: 1;
+		@include translateX(0);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 0;
+		@include translateX(10px);
+	}
+}
+
+@include keyframes(tdFadeOutDown) {
+	0% {
+		opacity: 1;
+		@include translateY(0);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 0;
+		@include translateY(10px);
+	}
+}
+
+@include keyframes(tdFadeOutLeft) {
+	0% {
+		opacity: 1;
+		@include translateX(0);
+		@include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+	}
+	100% {
+		opacity: 0;
+		@include translateX(-10px);
+	}
+}
+
+.tdFadeOutUp {
+	@include animationName(tdFadeOutUp);
+}
+.tdFadeOutRight {
+	@include animationName(tdFadeOutRight);
+}
+.tdFadeOutDown {
+	@include animationName(tdFadeOutDown);
+}
+.tdFadeOutLeft {
+	@include animationName(tdFadeOutLeft);
+}

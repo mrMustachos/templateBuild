@@ -1,0 +1,261 @@
+@import "compass";
+
+///////////////////////////////////////////////////////////////////
+// Breakpoints ////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+@mixin small_screens_1024 {
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin tablet_768 {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin large_mobile_600 {
+	@media only screen and (max-width: 600px) {
+		@content;
+	}
+}
+
+@mixin small_mobile_400 {
+	@media only screen and (max-width: 400px) {
+		@content;
+	}
+}
+
+///////////////////////////////////////////////////////////////////
+// Animation Mixins ///////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}  
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}  
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}
+
+@mixin animationName($str) {
+	-o-animation-name: #{$str};
+	-ms-animation-name: #{$str};
+	-moz-animation-name: #{$str};
+	-webkit-animation-name: #{$str};
+	animation-name: #{$str};
+}
+
+@mixin animationDuration($str) {
+	-o-animation-duration: #{$str};
+	-ms-animation-duration: #{$str};
+	-moz-animation-duration: #{$str};
+	-webkit-animation-duration: #{$str};
+	animation-duration: #{$str};
+}
+
+@mixin animationTimingFunction($str) {
+	-o-animation-timing-function: #{$str};
+	-ms-animation-timing-function: #{$str};
+	-moz-animation-timing-function: #{$str};
+	-webkit-animation-timing-function: #{$str};
+	animation-timing-function: #{$str};
+}
+
+@mixin animationIterationCount($str) {
+	-o-animation-iteration-count: #{$str};
+	-ms-animation-iteration-count: #{$str};
+	-moz-animation-iteration-count: #{$str};
+	-webkit-animation-iteration-count: #{$str};
+	animation-iteration-count: #{$str};
+}
+
+@mixin animationDirection($str) {
+	-o-animation-direction: #{$str};
+	-ms-animation-direction: #{$str};
+	-moz-animation-direction: #{$str};
+	-webkit-animation-direction: #{$str};
+	animation-direction: #{$str};
+}
+
+@mixin animationFillMode($str) {
+	-o-animation-fill-mode: #{$str};
+	-ms-animation-fill-mode: #{$str};
+	-moz-animation-fill-mode: #{$str};
+	-webkit-animation-fill-mode: #{$str};
+	animation-fill-mode: #{$str};
+}
+
+@mixin animationPlayState($str) {
+	-o-animation-play-state: #{$str};
+	-moz-animation-play-state: #{$str};
+	-ms-animation-play-state: #{$str};
+	-webkit-animation-play-state: #{$str};
+	animation-play-state: #{$str};
+}
+
+///////////////////////////////////////////////////////////////////
+// Helper Mixins //////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+@mixin appearance($str) {
+	-webkit-appearance: #{$str};
+	-moz-appearance: #{$str};
+	appearance: #{$str};
+}
+
+@mixin user_select($str) {
+	-webkit-user-select: #{$str};
+	-moz-user-select: #{$str};
+	-ms-user-select: #{$str};
+	user-select: #{$str};
+}
+
+///////////////////////////////////////////////////////////////////
+// Transform Mixins ///////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+// generic transform
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+// transform origin
+@mixin transform_origin($vert_horz) {
+	@include transform(transform-origin($vert_horz));
+}
+
+// rotate
+@mixin rotate($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+// scale refined
+@mixin scale_refined($scaleA, $scaleB) {
+	@include transform(scale($scaleA, $scaleB));
+}
+
+// rotate & scale
+@mixin rotate_scale($deg, $scale) {
+	@include transform(rotate(#{$deg}deg scale($scale)));
+}
+
+// scale & rotate
+@mixin scale_rotate($scale, $deg) {
+	@include transform(scale($scale) rotate(#{$deg}deg));
+}
+
+// translate
+@mixin translate($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+// translateY
+@mixin translateY($y) {
+	@include transform(translateY($y));
+}
+
+// rotate & translateY
+@mixin rotate_translateY($deg, $y) {
+	@include transform(rotate(#{$deg}deg translateY($y)));
+}
+
+// translateX
+@mixin translateX($x) {
+	@include transform(translateX($x));
+}
+
+// skew
+@mixin skew($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// perspective
+@mixin perspective($px) {
+	@include transform(perspective(#{$px}px));
+}
+
+// perspective & translateX
+@mixin perspective_translateX($px, $deg) {
+	@include transform(perspective(#{$px}px) rotate(#{$deg}deg));
+}
+
+// delay
+@mixin delay($delay) {
+	-webkit-animation-delay: $delay;
+	-moz-animation-delay: $delay;
+	-o-animation-delay: $delay;
+	animation-delay: $delay;
+}
+
+///////////////////////////////////////////////////////////////////
+// Helper Mixins //////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+@mixin vert_align {
+	position: absolute;
+	top: 50%;
+	-ms-transform: translate(0,-50%);
+	-webkit-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+}
+
+@mixin horz_align {
+	position: absolute;
+	left: 50%;
+	-ms-transform: translate(-50%,0);
+	-webkit-transform: translate(-50%,0);
+	transform: translate(-50%,0);
+}
+
+@mixin centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+@mixin box {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin cf {
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}

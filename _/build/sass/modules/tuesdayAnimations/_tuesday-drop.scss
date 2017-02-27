@@ -1,0 +1,73 @@
+/* Drop In */
+@include keyframes(tdDropInLeft) {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+    // transform: rotate(2deg) translateY(-15px);
+    @include rotate_translateY(2, -15);
+    @include transform_origin(right bottom);
+    @include animationTimingFunction(ease-in);
+  }
+  50% {
+    opacity: 1;
+    // transform: rotate(0) translateY(0px);
+    @include rotate_translateY(0, 0);
+    @include transform_origin(right bottom);
+    @include animationTimingFunction(ease-in);
+  }
+  75% {
+    // transform: rotate(-0.5deg) translateY(0px);
+    @include rotate_translateY(-0.5, 0);
+    @include transform_origin(left bottom);
+    @include animationTimingFunction(cubic-bezier(0.59, 0, 1, 0.375));
+  }
+  100% {
+    opacity: 1;
+    // transform: rotate(0) translateY(0px);
+    @include rotate_translateY(0, 0);
+    @include transform_origin(center bottom);
+    @include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+  }
+}
+
+@include keyframes(tdDropInRight) {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+    // transform: rotate(-2deg) translateY(-15px);
+    @include rotate_translateY(-2, -15);
+    @include transform_origin(left bottom);
+    @include animationTimingFunction(ease-in);
+  }
+  50% {
+    opacity: 1;
+    // transform: rotate(0) translateY(0px);
+    @include rotate_translateY(0, 0);
+    @include transform_origin(left bottom);
+    @include animationTimingFunction(ease-in);
+  }
+  75% {
+    transform: rotate(0.5deg) translateY(0px);
+    @include transform_origin(right bottom);
+    @include animationTimingFunction(cubic-bezier(0.59, 0, 1, 0.375));
+  }
+  100% {
+    opacity: 1;
+    // transform: rotate(0) translateY(0px);
+    @include rotate_translateY(0, 0);
+    @include transform_origin(center bottom);
+    @include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+  }
+}
+
+.tdDropInLeft {
+  @include animationName(tdDropInLeft);
+}
+
+.tdDropInRight {
+  @include animationName(tdDropInRight);
+}

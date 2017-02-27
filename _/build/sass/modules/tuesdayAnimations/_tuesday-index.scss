@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////
+/* == Tuesday - A Quirky CSS Animation Library == */
+/* == https://shakrmedia.github.io/tuesday ====== */
+////////////////////////////////////////////////////
+
+.animated {
+	@include animationDuration(0.3s);
+	@include animationFillMode(both);
+
+	&.infinite {
+		@include animationIterationCount(infinite);
+	}
+}
+
+////////////////////////////////////////////////////
+
+@import "modules/tuesdayAnimations/tuesday-fades";
+@import "modules/tuesdayAnimations/tuesday-zoom";
+@import "modules/tuesdayAnimations/tuesday-swing";
+@import "modules/tuesdayAnimations/tuesday-stamp";
+@import "modules/tuesdayAnimations/tuesday-plop";
+@import "modules/tuesdayAnimations/tuesday-drop";
+@import "modules/tuesdayAnimations/tuesday-hinge";

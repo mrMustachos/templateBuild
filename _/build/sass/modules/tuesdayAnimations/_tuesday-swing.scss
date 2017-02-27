@@ -1,0 +1,48 @@
+/* Swing */
+@include keyframes(tdSwingIn) {
+  0% {
+    opacity: 0;
+    // transform: rotate(-10deg) scale(0.85);
+    @include rotate_scale(-10, 0.85);
+    @include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+  }
+  70% {
+    opacity: 1;
+    transform: rotate(1deg);
+    @include animationTimingFunction(ease);
+  }
+  100% {
+    opacity: 1;
+    // transform: rotate(0deg) scale(1);
+    @include rotate_scale(0, 1);
+    @include animationTimingFunction(ease);
+  }
+}
+
+@include keyframes(tdSwingOut) {
+  0% {
+    opacity: 1;
+    // transform: rotate(0deg) scale(1);
+    @include rotate_scale(0, 1);
+    @include animationTimingFunction(cubic-bezier(0, 0.59, 0.375, 1));
+  }
+  30% {
+    opacity: 1;
+    // transform: rotate(-1deg);
+    @include animationTimingFunction(ease);
+  }
+  100% {
+    opacity: 0;
+    // transform: rotate(10deg) scale(0.85);
+    @include rotate_scale(10, 0.85);
+    @include animationTimingFunction(ease);
+  }
+}
+
+.tdSwingIn {
+  @include animationName(tdSwingIn);
+}
+
+.tdSwingOut {
+  @include animationName(tdSwingOut);
+}
